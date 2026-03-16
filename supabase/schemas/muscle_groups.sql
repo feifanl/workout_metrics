@@ -7,3 +7,7 @@ create table public.muscle_groups (
 );
 
 alter table public.muscle_groups enable row level security;
+
+create policy "All users can view muscle groups."
+on muscle_groups for select
+using ( true );

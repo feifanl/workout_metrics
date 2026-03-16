@@ -2,6 +2,9 @@ create table public.profiles (
   id uuid not null references auth.users on delete cascade,
   first_name text,
   last_name text,
+  is_public boolean,
+  -- will need to add more public functionalities later -- its not a simple binary of share all data / don't share, but rather choosing what to share
+  -- add friend functionality later
 
   primary key (id)
 );
@@ -24,3 +27,7 @@ $$;
 create trigger on_auth_user_created
   after insert on auth.users
   for each row execute procedure public.handle_new_user();
+
+create policy "Users can see their own profiles and any profiles set to public."
+on profiles for select
+using ( id = auth.uid() OR is_public = true );

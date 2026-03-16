@@ -12,3 +12,7 @@ create table public.exercises (
 );
 
 alter table public.exercises enable row level security;
+
+create policy "All users can view exercises."
+on exercises for select
+using ( true );
