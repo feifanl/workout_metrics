@@ -1,4 +1,4 @@
-export default function MetricsPage() {
+export default function ProfilePage() {
   return (
     <main className="p-6">
       <h1 className = "text-4xl font-bold mb-4">Contact</h1>

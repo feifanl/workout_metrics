@@ -9,17 +9,17 @@ export default function Home() {
       </p>
 
       <nav className="flex gap-4">
-        <a href="/users" className="text-blue-600 hover:underline">
-          Users
-        </a>
         <a href="/about" className="text-blue-600 hover:underline">
           About
         </a>
         <a href="/contact" className="text-blue-600 hover:underline">
           Contact
         </a>
-        <a href = "/metrics" className="text-blue-600 hover:underline">
-          View Workout Metrics
+        <a href = "/profile" className="text-blue-600 hover:underline">
+          View Profile
+        </a>
+        <a href = "/login" className="text-blue-600 hover:underline">
+          Login
         </a>
       </nav>
     </main>
