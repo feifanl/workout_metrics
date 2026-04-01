@@ -1,4 +1,12 @@
 import Link from 'next/link'
+import { createClient } from '@/utils/supabase/server'
+import { redirect } from 'next/navigation'
+
+// Protect page if not logged in, redirect to login screen
+const supabase = await createClient();
+
+const { data, error } = await supabase.auth.getClaims();
+if (error || !data?.claims) redirect('/auth/login');
 
 export default function ProfilePage() {
   return (
