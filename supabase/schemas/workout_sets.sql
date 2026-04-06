@@ -4,7 +4,7 @@ create table public.workout_sets (
     exercise_id int references exercises,
     set_number int,
     reps int not null default 0,
-    set_weight int not null default 0,
+    set_weight float not null default 0,
     time_seconds int, --seconds
     distance float, --miles
     notes text,
