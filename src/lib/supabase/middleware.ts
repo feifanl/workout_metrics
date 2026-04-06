@@ -34,15 +34,8 @@ export async function updateSession(request: NextRequest) {
     },
   );
 
-  // Check if user is logged in, otherwise redirect to login page
-  const { data } = await supabase.auth.getClaims();
-  const user = data?.claims;
-
-  if (!user && !request.nextUrl.pathname.startsWith('/login') && !request.nextUrl.pathname.startsWith('/auth')) {
-    const url = request.nextUrl.clone();
-    url.pathname = '/auth/login';
-    return NextResponse.redirect(url);
-  }
+  // Calling getClaims() refreshes the session token if it has expired
+  await supabase.auth.getClaims();
 
   return supabaseResponse;
 };

@@ -35,7 +35,7 @@ export function LoginForm({ className, ...props }: React.ComponentPropsWithoutRe
     try {
       const { error } = await supabase.auth.signInWithPassword({email, password});
       if (error) throw error;
-      router.push('/feed');
+      router.push('/');
     } catch (error: unknown) {
       setError(error instanceof Error ? error.message : "An unknown error has occurred.");
     } finally {

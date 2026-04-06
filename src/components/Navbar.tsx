@@ -5,7 +5,7 @@ export default function Navbar() {
     <nav className="sticky top-0 z-50 w-full bg-[#001f3f] border-b border-white/10">
       <div className="flex items-center justify-between px-6 py-3">
 
-        <Link href="/feed" className="text-white font-bold text-lg tracking-tight">
+        <Link href="/" className="text-white font-bold text-lg tracking-tight">
           WorkoutMetrics
         </Link>
 
